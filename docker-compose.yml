@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+    host:
+        container_name: host
+        build:
+            context: /host
+            dockerfile: Dockerfile
+        ports:
+            - 3000:3000
+        environment:
+            - webpack_polling=true
+        volumes:
+            - /usr/host/node_modules
+            - ./host:/usr/host
+volumes:
+    host:
+        name: host
