@@ -66,9 +66,11 @@ const ProjectsList = () => {
             {
                 pro.modal && <div className={classNames('projectsModal')}>
                     <div className={classNames('projectModalContainer')}>
-                        <p onClick={handleProjectClose} className={classNames('projectModalCloseBtn')}>CLOSE</p>
                         <div className={classNames('modalContentContainer')}>
-                            <h3 className={classNames('status')}>{ pro.project && pro.project.endDate === "" ? 'On-Going' : 'Completed' }</h3>
+                            <div className={classNames('modalStatusAndCloseBntContainer')}>
+                                <h3 className={classNames('status')}>{ pro.project && pro.project.endDate === "" ? 'On-Going' : 'Completed' }</h3>
+                                <p onClick={handleProjectClose} className={classNames('projectModalCloseBtn')}>CLOSE</p>
+                            </div>
                             <h1>{ pro.project && pro.project.name }</h1>
                             <h2>{ pro.project && pro.project.client }</h2>
                             <p className={classNames('projectDesc')}>{ pro.project && pro.project.description }</p>

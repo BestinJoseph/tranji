@@ -94,7 +94,7 @@ export default makeStyles(()=>({
             left: '0',
             zIndex: '10',
             width:'100%',
-            height: '100%',
+            height: '100vh',
             background: 'rgba(0,0,0,0.5)',
 
             '@media screen and (max-width: 430px)': {
@@ -104,14 +104,13 @@ export default makeStyles(()=>({
             '& .projectModalContainer': {
                 width: '30rem',
                 background: 'white',
-                position: 'relative',
+                position: 'relative', //
                 top: '0',
                 right: '0',
-                height: '100vh',
+                height: '100%',
                 padding: '2rem',
-                // overflowY: 'scroll',
-                // overflowX: 'clip',
-                border: '1px solid red',
+                overflowY: 'scroll',
+                overflowX: 'clip',
 
                 '@media screen and (max-width: 430px)': {
                     width:'100vw',
@@ -119,7 +118,7 @@ export default makeStyles(()=>({
 
                 '& .modalProjectImageContainer': {
                     width: '100%',
-                    height: '100%',
+                    height: 'auto',
 
                     '& .modalProjectImage': {
                         // border: '1px solid red',
@@ -128,54 +127,63 @@ export default makeStyles(()=>({
                     }
                 },
 
-                '& .projectModalCloseBtn': {
-                    position: 'absolute',
-                    top: '1.5rem',
-                    right: '-6rem',
-                    width: '4rem',
-                    height: '4rem',
-                    border: '1px solid white',
-                    borderRadius: '2rem',
-                    textAlign: 'center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer',
-                    transition: 'ease-in-out .4s',
-                    fontWeight: '600',
-                    fontSize: '.75rem',
-                    color: 'white',
-
-                    '@media screen and (max-width: 430px)': {
-                        right: '1rem',
-                        borderColor: 'black',
-                        color: 'black',
-                        width: '3rem',
-                        height: '3rem',
-                        fontSize: '.65rem',
-                    },
-
-                    '&:hover': {
-                        color: 'black',
-                        // borderColor: 'blue',
-                        background: 'white',
-                        fontSize: '.85rem',
-                    },
-                },
-
                 '& .modalContentContainer': {
                     marginBottom: '3rem',
 
-                    '& .status': {
-                        marginBottom: '0.5rem',
-                        padding: '.5rem .75rem',
-                        color: 'white',
-                        backgroundColor: 'blue',
-                        display: 'inline-block',
-                        borderRadius: '.25rem',
+                    '& .modalStatusAndCloseBntContainer': {
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        paddingBottom: '1rem',
 
-                        '@media screen and (max-width: 430px)': {
-                            marginBottom: '1.5rem',
+                        '& .status': {
+                            marginBottom: '0.5rem',
+                            padding: '.5rem .75rem',
+                            color: 'white',
+                            backgroundColor: 'blue',
+                            display: 'inline-block',
+                            borderRadius: '.25rem',
+
+                            '@media screen and (max-width: 430px)': {
+                                marginBottom: '1.5rem',
+                            },
+                        },
+
+                        '& .projectModalCloseBtn': {
+                            // position: 'absolute',
+                            top: '0rem',
+                            right: '-1rem',
+                            width: '4rem',
+                            height: '4rem',
+                            border: '1px solid white',
+                            borderRadius: '2rem',
+                            textAlign: 'center',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            transition: 'ease-in-out .4s',
+                            fontWeight: '600',
+                            fontSize: '.75rem',
+                            color: 'white',
+                            background: "orange",
+                            position: 'sticky',
+
+                            '@media screen and (max-width: 430px)': {
+                                right: '1rem',
+                                borderColor: 'black',
+                                color: 'black',
+                                width: '3rem',
+                                height: '3rem',
+                                fontSize: '.65rem',
+                            },
+
+                            '&:hover': {
+                                color: 'black',
+                                // borderColor: 'blue',
+                                background: 'white',
+                                fontSize: '.85rem',
+                            },
                         },
                     },
 
