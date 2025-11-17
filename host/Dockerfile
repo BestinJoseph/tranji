@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18-alpine AS build
 
 WORKDIR /usr/host
 
@@ -8,6 +8,20 @@ RUN npm i
 
 COPY . .
 
-EXPOSE 3000
+RUN npm run build
 
-CMD ["npm","start"]
+######################################
+
+FROM nginx:1.17.1-alpine
+
+WORKDIR /usr/share/nginx/html
+
+COPY --from=build /usr/host/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+RUN rm -rf ./*
+
+COPY --from=build /usr/host/build .
+
+COPY --from=build /usr/host/public .
+
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]

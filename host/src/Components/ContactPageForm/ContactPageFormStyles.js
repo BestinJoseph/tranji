@@ -5,21 +5,39 @@ export default makeStyles(()=>({
 
         '& .contactContainer': {
             maxWidth: '1080px',
+            width: '100vw',
             margin: '0 auto',
             padding: '4rem 0',
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gridColumnGap: '2rem',
 
+            '@media screen and (max-width: 430px)': {
+                padding: '3rem 2rem',
+                gridTemplateColumns: '1fr',
+                maxWidth: '100vw',
+                width: '100%',
+            },
+
             '& .contactLocation': {
                 // border: '1px solid blue',
 
+                '@media screen and (max-width: 430px)': {
+                    width: '100%',
+                    marginBottom: '2rem',
+
+                },
+
                 '& .locationHeader': {
-                    marginBottom: '1.5rem',
+                    marginBottom: '0.5rem',
 
                     '& h4': {
                         display: 'flex',
                         alignItems: 'center',
+
+                        '@media screen and (max-width: 430px)': {
+                            display: 'block',
+                        },
 
                         '&::before': {
                             content: "' '",
@@ -32,9 +50,13 @@ export default makeStyles(()=>({
                     }
                 },
 
-                '& .lcoationAddress': {
-                    paddingLeft: '2rem',
-                    width: '250px',
+                '& .locationAddress': {
+                    // paddingLeft: '2rem',
+                    width: '450px',
+
+                    '@media screen and (max-width: 430px)': {
+                        width: '100%',
+                    },
 
                     '& h6': {
                         fontSize: '.75rem',

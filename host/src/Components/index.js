@@ -11,5 +11,16 @@ import ContactPageForm from './ContactPageForm'
 import ExpertisePageBuilding from './ExpertisePageBuilding'
 import ExpertisePageMenu from './ExpertisePageMenu'
 import ExpertisePageProjects from './ExpertisePageProjects'
+import TranjiSuccessStories from './TranjiSuccessStories'
+import PartnerPageContent from './PartnerPageContent'
 
-export { Header, Footer, HomePageSlider, HomePageHistory, HomePageExpertise, HomePageProjects, HomePageReachOut, HomePageClients, AboutUsContent, ContactPageForm, ExpertisePageBuilding, ExpertisePageMenu, ExpertisePageProjects }
+export { Header, Footer, 
+    HomePageSlider, HomePageHistory, HomePageExpertise, HomePageProjects, HomePageReachOut, HomePageClients, 
+    AboutUsContent, 
+    ContactPageForm, 
+    ExpertisePageBuilding, 
+    ExpertisePageMenu, 
+    ExpertisePageProjects,
+    TranjiSuccessStories,
+    PartnerPageContent,
+}

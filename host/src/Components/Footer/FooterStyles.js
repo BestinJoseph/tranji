@@ -9,14 +9,28 @@ export default makeStyles(()=>({
             maxWidth: '1140px', 
             margin: '0 auto',
 
+            '@media screen and (max-width: 430px)': {
+                padding: '1rem',
+            },
+
             '& .footerTopSection': {
                 display: 'grid',
                 gridTemplateColumns: '1fr .65fr .65fr 1fr',
                 borderBottom: '1px solid white',
                 padding: '3rem 0 1rem',
 
+                '@media screen and (max-width: 430px)': {
+                    display: 'inline-block',
+                    padding: '1rem 0 1rem',
+                },
+
                 '& .footerIntro': {
                     width: '80%',
+
+                    '@media screen and (max-width: 430px)': {
+                        width: '100%',
+                        marginBottom: '2rem',
+                    },
 
                     '& h4': {
                         marginBottom: '1.5rem',
@@ -29,34 +43,65 @@ export default makeStyles(()=>({
                     }
                 },
 
-                '& .footerLinks': {
-                    listStyle: 'none',
-                    paddingLeft: '0rem',
+                '& .footerLinksContainer': {
 
-                    '& li': {
-                        marginBottom: '.5rem',
-                        fontSize: '.95rem',
+                    '& h3': {
+                        marginBottom: '1rem',
+                    
+                        '@media screen and (max-width: 430px)': {
+                            marginBottom: '1rem',
+                        },
+                    },
 
-                        '& a': {
-                            color: 'white',
-                            textDecoration: 'none',
+                    '@media screen and (max-width: 430px)': {
+                        marginBottom: '2rem',
+                    },
 
-                            '&:hover': {
-                                textDecoration: 'underline',
+                    '& .footerLinks': {
+                        listStyle: 'none',
+                        paddingLeft: '0rem',
+
+                        '& li': {
+                            marginBottom: '.5rem',
+                            fontSize: '.95rem',
+
+                            '& a': {
+                                color: 'white',
+                                textDecoration: 'none',
+
+                                '&:hover': {
+                                    textDecoration: 'underline',
+                                }
                             }
                         }
-                    }
+                    },
+
                 },
 
-                '& .footerContacts': {
-                    listStyle: 'none',
-                    paddingLeft: '0rem',
-                    width: '85%',
+                '& .footerContactsContainer': {
 
-                    '& li': {
+                    '@media screen and (max-width: 430px)': {
+                        marginBottom: '2rem',
+                    },
+
+                    '& h4': {
                         marginBottom: '1rem',
-                        fontSize: '.8rem',
-                        lineHeight: '1.25rem',
+
+                        '@media screen and (max-width: 430px)': {
+                            marginBottom: '1rem',
+                        },
+                    },
+
+                    '& .footerContacts': {
+                        listStyle: 'none',
+                        paddingLeft: '0rem',
+                        width: '85%',
+
+                        '& li': {
+                            marginBottom: '1rem',
+                            fontSize: '.8rem',
+                            lineHeight: '1.25rem',
+                        }
                     }
                 }
             },

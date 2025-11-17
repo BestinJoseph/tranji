@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import classnames from 'classnames'
 
 import useStyles from './HeaderStyles'
@@ -7,22 +7,59 @@ import useStyles from './HeaderStyles'
 const Header = () => {
     const classes = useStyles()
     const navigate = useNavigate()
+    const { pathname } = useLocation()
+    const menu = [
+        {name: 'Home', link: ''}, 
+        {name: 'About Us', link: 'about'}, 
+        {name: 'Expertise', link: 'expertise'}, 
+        {name: 'Projects', link: 'project'}, 
+        {name: 'Partners', link: 'partner'}, 
+        {name: 'Contact Us', link: 'contact'}
+    ]
+    const [menuModal, setMenuModal] = useState(false)
+    const [sizeScreen, setSizeScreen] = useState(500)
+    const [active, setActive] = useState('')
+
+    // console.log(pathname)
+
+    useEffect(()=>{
+        setActive(pathname.split('/')[1])
+        if(window.innerWidth >= sizeScreen) {
+            setSizeScreen(window.innerWidth)
+            setMenuModal(true)
+        } else {
+            setSizeScreen(500)
+            setMenuModal(false)
+        }
+    },[pathname])
 
     const handleNavigate = () => {
+        sizeScreen <= 500 ? setMenuModal(false) : null
         navigate('/')
     }
+
+    const handleHumberger = () => {
+        setMenuModal(!menuModal)
+    }
+
+    const menuLinkHandle = () => {
+        sizeScreen <= 500 ? setMenuModal(false) : null
+    }
+
+    // console.log(active)
+    // console.log(window.innerWidth)
 
     return (
         <div className={classes.header}>
             <div className={classnames('headerTop')}>
                 <div className={ classnames('headerLogo') }>
-                    <img src="/logo.png" width="70" onClick={handleNavigate} />
+                    <img src="/logo.svg" width="100%" height="100%" onClick={handleNavigate} />
                 </div>
                 <div className={classnames('headerCommunicate')}>
                     <div>
                         <div>
                             <p>Call Us</p>
-                            <h6>+966 (57) 2880 231</h6>
+                            <h6>+966 (50) 636 5392</h6>
                         </div>
                     </div>
                     <div>
@@ -38,13 +75,13 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+                <div className={classnames('humbergerIcon')} onClick={() => handleHumberger()} ></div>
             </div>
-            <div className={classnames('headerMenuContainer')}>
+            <div className={classnames('headerMenuContainer')} style={{ display: menuModal ? 'inline-block' : 'none' }} >
                 <div className={classnames('headerMenu')}>
-                    <Link to="/" className={classnames('headerMenuLink')}>Home</Link>
-                    <Link to="/about" className={classnames('headerMenuLink')}>About Us</Link>
-                    <Link to="/expertise" className={classnames('headerMenuLink')}>Expertise</Link>
-                    <Link to="/contact" className={classnames('headerMenuLink')}>Contact Us</Link>
+                    { menu && menu.map((mee, i) => (
+                        <Link style={{ background: active === mee.link ? '#3c54a4' : 'none' }} to={`/${mee.link}`} className={classnames('headerMenuLink')} key={i} onClick={() => menuLinkHandle()}>{mee.name}</Link>
+                    ))}
                 </div>
             </div>
         </div>

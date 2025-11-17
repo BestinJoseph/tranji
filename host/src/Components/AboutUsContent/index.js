@@ -2,36 +2,67 @@ import React from 'react'
 import classNames from 'classnames'
 
 import useStyles from './AboutUsContentStyles'
+import data from '../../database'
 
 const AboutUsContent = () => {
     const classes = useStyles()
-    const requirements = [{ name: 'VISION', content: ['To be a world-class construction and infrastructure enterprise committed to quality, timely completion, customer satisfaction, continuous learning and enhancement of stakeholders']}, { name: 'MISSION', content: ['To build a strong future ensuring increased returns to shareholders and enhanced support to associates.','To adopt the latest technologies in the fields of engineering, construction, operation and maintenance of infrastructure projects.','To encourage innovation, professional integrity, upgradation of knowledge and skills of employees and a safe working environment.','To be a responsible corporate citizen committed to the social cause.']}, { name: 'VALUES', content: ['']}]
+    const requirements = []
+    const { about, mission, vision, whowe, difference } = data.about
+
+    if(!data.about) {
+        return 'Loading...'
+    }
 
     return (
         <div className={classes.aboutContent}>
             <div className={classNames('aboutContentContainer')}>
-                <h4>About Us Content</h4>
-                <h1>Driven by visionary values</h1>
-                <p>Taking forward the values and ethics envisioned by the Founder Chairman, Padma Shri awardee Dr. AVS Raju, the group’s culture is clearly spelt out in the Vision and Mission statements.</p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', }}>
-                    <div className={classNames('aboutItems')}>
-                        {
-                            requirements.map((req, i) => (
-                                <div key={i} className={classNames('aboutValueItem')}>
-                                    <div></div>
-                                    <div className={classNames('aboutValueItemSingle')}>
-                                        <h3>{ req.name }</h3>
-                                        { req.content.map((cont, j) => (
-                                            <p key={j}>{ cont }</p>
-                                        ))}
-                                    </div>
-                                </div>
+                <h4>{ about?.title }</h4>
+                <h1>{ about?.subContent }</h1>
+                <div className={classNames('aboutUsContainer')}>
+                    {
+                        about && about.info?.map((inf, i) => (
+                            <p key={i}>{inf}</p>
+                        ))
+                    }
+                </div>
+                <div className={classNames('aboutUsMissionVision')} >
+                    <div>
+                        <h1>{vision.name }</h1>
+                        { 
+                            vision.content.map( (mis, i) => (
+                                <p key={i} style={{ lineHeight: '1.5rem', }}>{ mis }</p>
                             ))
                         }
                     </div>
-                    <div style={{  }}>
-                        <img src="/images/aboutus.png" width="400" />
+                    <div className={classNames('missionSection')}>
+                        <h1>{mission.name }</h1>
+                        { 
+                            mission.content.map( (mis, i) => (
+                                <p key={i} style={{ lineHeight: '1.5rem', }}>{ mis }</p>
+                            ))
+                        }
                     </div>
+                </div>
+                <div className={classNames('whoWeAre')}>
+                    <div>
+                        <h1>{ whowe.name }</h1>
+                        {
+                            whowe.content.map((who, i) => (
+                                <p style={{ lineHeight: '1.5rem', marginBottom: '1rem' }} key={i}>{ who }</p>
+                            ))
+                        }
+                    </div>
+                    <div className={classNames('tranjiLogo')}>
+                        <img src="./images/tranji.png" style={{ width: '60%', height: 'auto', }} />
+                    </div>
+                </div>
+                <div style={{ marginTop: '5rem', }}>
+                    <h1>{ difference.name}</h1>
+                    {
+                            difference.content.map((dif, i) => (
+                                <p style={{ lineHeight: '1.5rem', marginBottom: '1rem' }} key={i}>{ dif }</p>
+                            ))
+                        }
                 </div>
             </div>
         </div>

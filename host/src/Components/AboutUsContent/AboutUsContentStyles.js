@@ -8,6 +8,10 @@ export default makeStyles(()=>({
             margin: '0 auto',
             padding: '4rem 0',
 
+            '@media screen and (max-width: 430px)': {
+                padding: '3rem 2rem',
+            },
+
             '& h4': {
                 display: 'flex',
                 alignItems: 'center',
@@ -23,30 +27,56 @@ export default makeStyles(()=>({
             },
 
             '& h1': {
-                marginBottom: '2rem',
+                marginBottom: '1rem',
             },
 
-            '& p': {
+            '& .aboutUsContainer': {
+
+                '& p': {
+                    marginBottom: '1rem',
+                    lineHeight: '1.5rem',
+                }
             },
 
-            '& .aboutItems': {
-                width: '500px',
+            '& .aboutUsMissionVision': {
+                display: 'grid', 
+                gridTemplateColumns: '1fr 1fr', 
+                gridColumnGap: '3rem', 
+                marginTop: '5rem',
 
-                '& .aboutValueItem': {
-                    margin: '2rem 0',
+                '@media screen and (max-width: 430px)': {
+                    gridTemplateColumns: '1fr', 
+                },
 
-                    '& .aboutValueItemSingle': {
-                        marginBottom: '2rem',
+                '& .missionSection': {
+                    background: 'green', 
+                    padding: '2rem', 
+                    color: 'white',
 
-                        '& h3': {
-                            marginBottom: '1rem',
-                        },
-        
-                        '& p': {
-                            lineHeight: '1.25rem',
-                            marginBottom: '.75rem',
-                        }
-                    }
+                    '@media screen and (max-width: 430px)': {
+                        marginTop: '2rem',
+                    },
+                }
+            },
+
+            '& .whoWeAre': {
+                marginTop: '5rem', 
+                display: 'grid', 
+                gridTemplateColumns: '1fr 1fr', 
+                gridColumnGap: '3rem', 
+
+                '@media screen and (max-width: 430px)': {
+                    gridTemplateColumns: '1fr', 
+                },
+
+                '& .tranjiLogo': {
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center',
+
+                    '@media screen and (max-width: 430px)': {
+                        marginTop: '2rem'
+                    },
                 }
             }
         }

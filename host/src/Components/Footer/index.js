@@ -13,23 +13,20 @@ const Footer = () => {
             <div className={classnames('footerSubContainer')}>
                 <div className={classnames('footerTopSection')}> 
                     <div className={classnames('footerIntro')}>
-                        <h4>TranJi Professionalism</h4>
-                        <p>Tran Ji Trading & Contracting company is Saudi owned and managed company registered under the laws of the Kingdom. We offers Construction works in all possible fields including Electro Mechanical Testing and Commissioning, Manpower Supplies & Material Supply.</p>
+                        <h4>Tran Ji LLC</h4>
+                        <p></p>
                     </div>
-                    <div>
+                    <div className={classnames('footerLinksContainer')}>
                         <h3>Quick Links</h3>
                         <ul className={classnames('footerLinks')}>
+                            <li><Link to="/about">Home</Link></li>
                             <li><Link to="/about">About Us</Link></li>
                             <li><Link to="/">Expertise</Link></li>
-                            <li><Link to="/">Commitment</Link></li>
-                            <li><Link to="/">Investors</Link></li>
-                            <li><Link to="/">Landmarks</Link></li>
-                            <li><Link to="/">Media</Link></li>
-                            <li><Link to="/">Human Capital</Link></li>
-                            <li><Link to="/">Contact</Link></li>
+                            <li><Link to="/">Projects</Link></li>
+                            <li><Link to="/">Contact Us</Link></li>
                         </ul>
                     </div>
-                    <div>
+                    <div className={classnames('footerContactsContainer')}>
                         <h4>Contacts</h4>
                         <ul className={classnames('footerContacts')}>
                             {
@@ -40,11 +37,11 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h4>social links.</h4>
+                        <h4>Social Links</h4>
                     </div>
                 </div>
                 <div className={classnames('footerCopyrightSection')}>
-                    <h5>All rights reserved Copyrights 2023.</h5>
+                    <h5>All rights reserved Copyrights 2024.</h5>
                     <h5>Copyrigt & Terms</h5>
                 </div>
             </div>

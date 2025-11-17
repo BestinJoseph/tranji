@@ -1,27 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
 
 import useStyles from './ExpertisePageStyles'
-import { ExpertisePageBuilding, ExpertisePageMenu, ExpertisePageProjects } from '../../Components'
+import { ExpertisePageBuilding, ExpertisePageMenu, ExpertisePageProjects, TranjiSuccessStories } from '../../Components'
+import data from '../../database'
+import { BootStrapHeader } from '../../utils'
 
 const ExpertisePage = () => {
     const classes = useStyles()
+    const [selectedService, setSelectedServices] = useState(data.services[0])
+    const { clients, services } = data
+
+    if(!services) {
+        return 'Loading...'
+    }
 
     return (
         <div className={classes.expretiseContainer}>
-            <div className={classNames('expretiseHeader')}>
-                <div className={classNames('expretiseHeaderContainer')}>
-                    <h4>BUILDING BRILLIANCY</h4>
-                    <h1>Expertise</h1>
-                    <div className={classNames('expretiseBreadCrum')}>
-                        <h5>Home</h5>
-                        <h5>Expertise</h5>
-                    </div>
-                </div>
-            </div>
-            <ExpertisePageBuilding />
-            <ExpertisePageMenu />
-            <ExpertisePageProjects />
+            <BootStrapHeader />
+            <ExpertisePageBuilding clients={clients} />
+            <ExpertisePageMenu services={services} setSelectedServices={setSelectedServices} />
+            {/* <ExpertisePageProjects service={ selectedService } /> */}
+            <TranjiSuccessStories />
         </div>
     )
 }

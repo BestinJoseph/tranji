@@ -18,13 +18,25 @@ const ContactPageForm = () => {
             <div className={classNames('contactContainer')}>
                 <div className={classNames('contactLocation')}>
                     <div className={classNames('locationHeader')}>
-                        <h4>CONTACT US</h4>
+                        {/* <h4>CONTACT US</h4> */}
                         <h2>Corporate Office</h2>
                     </div>
-                    <div className={classNames('lcoationAddress')}>
-                        <h6>NCC House, Madhapur Hyderabad - 500081 Telangana, India</h6>
-                        <h6>+91 40 2326 8888</h6>
+                    <div className={classNames('locationAddress')}>
+                        <h6>Building No. 5248 , King Saud Branch Road, 6382 Al Muhammadiyah Dist.</h6>
+                        <h6>P.O Box 32432, Dammam, Kingdom of Saudi Arabia</h6>
+                        <h6>+966 113 817 5400</h6>
                         <h6>info@trange.sa</h6>
+                    </div>
+                    <div style={{ marginTop: '2rem'}}>
+                        <div className={classNames('locationHeader')}>
+                            <h2>Branch Office</h2>
+                        </div>
+                        <div className={classNames('locationAddress')}>
+                            <h6>Bld. No. 7497, Al-Amal Plaza, 1st Floor, Al-Attas street</h6>
+                            <h6>Zahra District, Jeddah, Kingdom of Saudi Arabia</h6>
+                            <h6>+955 50 636 5392</h6>
+                            <h6>info@trange.sa</h6>
+                        </div>
                     </div>
                 </div>
                 <div className={classNames('contactFormContainer')}>

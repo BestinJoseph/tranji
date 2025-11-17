@@ -4,6 +4,10 @@ export default makeStyles(()=>({
     reachOutContainer: {
         padding: '4rem 0',
 
+        '@media screen and (max-width: 430px)': {
+            padding: '3rem 2rem',
+        },
+
         '& .reachOutSubContainer': {
             maxWidth: '1080px',
             margin: '0 auto',
@@ -14,8 +18,16 @@ export default makeStyles(()=>({
                 marginTop: '2rem',
                 gridColumnGap: '4rem',
 
+                '@media screen and (max-width: 430px)': {
+                    display: 'inline-block',
+                },
+
                 '& .reachOutForm': {
                     // border: '1px solid blue',
+
+                    '@media screen and (max-width: 430px)': {
+                        marginBottom: '2rem',
+                    },
 
                     '& .reachOutSubForm': {
 

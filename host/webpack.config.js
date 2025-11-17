@@ -1,10 +1,17 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin")
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin")
+const path = require('path');
+const { argv } = require("process");
 
 const deps = require("./package.json").dependencies;
+
+// console.log(argv[3])
+
 module.exports = {
   output: {
-    publicPath: "http://localhost:3000/",
+    path: path.resolve(__dirname, '../build'),
+    publicPath: argv[3] === 'production' ? "https://tranji-sa.firebaseapp.com/" : "http://localhost:3000/",
+    // publicPath: "http://localhost:3000/",
   },
 
   resolve: {
@@ -37,7 +44,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpe?g|gif|png|svg)$/i,
+        test: /\.(jpe?g|gif|png|svg|mp4)$/i,
         use: [
           {
             loader: 'url-loader',

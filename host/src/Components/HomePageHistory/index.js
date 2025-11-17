@@ -2,29 +2,34 @@ import React from 'react'
 import classNames from 'classnames'
 
 import useStyles from './HomePageHistoryStyles'
+import { useNavigate } from 'react-router-dom'
 
 const HomePageHistory = () => {
     const classes = useStyles()
-    const history = [{name: "Building Projects", count: '490+'}, {name: "Water Pipelines", count: '20,000 + KMS.'}, {name: "Land Irrigated", count: '350,000 + ACRES'}, {name: "Villages Electrified", count: '35,000 +'}, {name: "Employees", count: '11,000 +'}]
+    const history = [{name: "Substation & Transmission Line", imageUrl: 'othl'}, {name: "Commercial Building Constructions", imageUrl: 'commercial'}, {name: "Projects Drafting services", imageUrl: 'drafting'}, {name: "Solar PV Projects", imageUrl: 'solar'}]
+    const navigate = useNavigate()
+    
+    const handleNavigationServices = (nav) => {
+        console.log(nav)
+        navigate('/expertise')
+    }
+
     return (
         <div className={classes.historyContainer}>
             <div className={classNames('historySubContainer')}>
-                <p style={{ marginBottom: '1rem', }}>A LEGACY OF TRANSFORMATION</p>
-                <h1 style={{ marginBottom: '1rem', fontSize: '2.5rem', }}>Over 4 decades of infra-excellence</h1>
+                <p style={{ fontSize: '1.25rem', marginBottom: '.5rem', fontWeight: '600', textTransform: 'uppercase', }}>Tranji provides</p>
+                <h1 className={classNames('historyHeader')}>Easy solution for complicated construction projects</h1>
                 <div className={classNames('historyContent')}>
-                    <div>
-                        <img src="/images/aboutus.png" alt="who we are" width="300" height="" />
-                    </div>
-                    <div style={{ widht: '30%'}}>
-                        <p>Tran Ji Trading & Contracting company is Saudi owned and managed company registered under the laws of the Kingdom. We offers Construction works in all possible fields including Electro Mechanical Testing and Commissioning, Manpower Supplies & Material Supply. Our dedication to Safety and Quality policy of our customer’s and our own policies give us a chance to improvise ourselves. “Safety First” for all employees is embedded in our company culture from top to bottom. Our area of expertise includes building technology, civil and structural engineering.</p>
+                    <div className={classNames('historyContentInner')}>
+                        <p className={classNames('contentText')}>Our commitment to adhering to both our customers' Safety and Quality rules, as well as our own, provides us with an opportunity to continuously improve ourselves. Ensuring the safety of all employees is deeply ingrained in our business culture, permeating every level of the organization.</p>
                     </div>
                 </div>
                 <div className={classNames('historyStats')}>
                     {
                         history.map((hist, i) => (
-                            <div className={classNames('historyStatsItem')}>
-                                <h1 className={classNames('historyStatCount')}>{hist.count}</h1>
-                                <h5>{hist.name}</h5>
+                            <div onClick={() => handleNavigationServices(hist)} className={classNames('historyStatsItem')} key={i}>
+                                <img src={`/images/${hist.imageUrl}.jpg`} alt="cool" width={`100%`} className={ classNames("historyImage")} />
+                                <h5 className={classNames('historyStatText')}>{hist.name}</h5>
                             </div>
                         ))
                     }
