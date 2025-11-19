@@ -2,17 +2,49 @@ version: '3.8'
 
 services:
     host:
+        stdin_open: true
         container_name: host
         build:
             context: /host
             dockerfile: Dockerfile
+        expose:
+            - 3000
         ports:
-            - 3000:3000
+            - 80:80
+            - 3000:80
         environment:
-            - webpack_polling=true
+            - WATCHPACK_POLLING=true
+        depends_on:
+            - postgres
         volumes:
             - /usr/host/node_modules
             - ./host:/usr/host
+    # api:
+    #     container_name: api
+    #     build:
+    #         context: /api
+    #         dockerfile: Dockerfile
+    #     ports:
+    #         - 8000:8000
+    #     environment:
+    #         - CHOKIDAR_USEPOLLING=true
+    #     volumes:
+    #         - /usr/api/node_modules
+    #         - ./api:/usr/api
+    # postgres:
+    #     image: postgres:14.1-alpine
+    #     container_name: postgres
+    #     restart: always
+    #     ports:
+    #         - 5432:5432 
+    #     env_file:
+    #         - .env
+    #     volumes:
+    #         - postgres:/var/lib/postgresql/data
 volumes:
     host:
         name: host
+    # api:
+    #     name: api
+    # postgres:
+    #     name: postgres
