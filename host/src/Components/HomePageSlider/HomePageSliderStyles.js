@@ -2,7 +2,7 @@ import { makeStyles } from "@mui/styles"
 
 export default makeStyles(()=>({
     sliderContainer: {
-        height: '45vh',
+        height: '85vh',
         // border: '1px solid yellow',
         display: 'flex',
         flexDirection: 'column',
@@ -10,34 +10,41 @@ export default makeStyles(()=>({
         alignItems: 'center',
         // background: '#96b576',
         width: '100%',
-        maxHeight: '35rem',
-        height: '100vh',
+        maxHeight: '85vh',
+        // height: '100vh',
         position: 'relative',
         overflow: 'hidden',
 
         '@media screen and (max-width: 430px)': {
             overflow: 'hidden',
             width: 'auto',
-            // maxWidth: '100%',
-            height: '100vh',
+            maxWidth: '100%',
+            height: '70vh',
             // maxHeight: '100vh',
+            maxHeight: '70vh',
         },
 
-        '& .videoContent': {
-            width: '100%', 
-            overflow: 'hidden', 
-            objectFit: 'fill',
+        // '& .videoContent': {
+        //     width: '100%', 
+        //     overflow: 'hidden', 
+        //     objectFit: 'fill',
 
-            '@media screen and (max-width: 430px)': {
-                height: '100%',
-                width: 'auto', 
-                overflow: 'hidden', 
-            },
-        },
+        //     '@media screen and (max-width: 430px)': {
+        //         height: '100%',
+        //         width: 'auto', 
+        //         overflow: 'hidden', 
+        //     },
+        // },
 
         '& .sliderImage': {
             height: 'auto',
-            width: '100%'
+            width: '100%',
+
+            '@media screen and (max-width: 430px)': {
+                height: '100vh',
+                border: '1px solid orange',
+                width: 'auto',
+            },
         },
 
         '& .sliderContent': {
@@ -53,9 +60,11 @@ export default makeStyles(()=>({
             alignItems: 'center',
 
             '@media screen and (max-width: 430px)': {
-                bottom: '2rem',
-                left: '1rem',
+                background: 'linear-gradient(to right, rgba(6, 55, 129, 0.53), rgba(6, 55, 129, 0.53))',
+                bottom: '0rem',
+                left: '0rem',
                 color: 'white',
+                height: '70vh',
             },
 
             '& .sliderContentInner': {
@@ -63,6 +72,10 @@ export default makeStyles(()=>({
                 width: '100vw',
                 maxWidth: '60vw',
                 margin: '0 auto',
+
+                '@media screen and (max-width: 430px)': {
+                    maxWidth: '80vw',
+                },
 
                 '& h5': {
                     fontSize: '1rem',
@@ -73,7 +86,9 @@ export default makeStyles(()=>({
                     textTransform: 'uppercase',
     
                     '@media screen and (max-width: 430px)': {
-                        marginBottom: '.25rem',
+                        marginBottom: '.75rem',
+                        fontSize: "",
+                        width: '100%',
                     },
                 },
 
@@ -86,6 +101,9 @@ export default makeStyles(()=>({
     
                     '@media screen and (max-width: 430px)': {
                         marginBottom: '.25rem',
+                        fontSize: "2rem",
+                        lineHeight: '2.25rem',
+                        width: '100%',
                     },
                 },
     
@@ -98,6 +116,8 @@ export default makeStyles(()=>({
     
                     '@media screen and (max-width: 430px)': {
                         // marginBottom: '.25rem',
+                        width: '100%',
+                        marginTop: '1.5rem',
                     },
                 },
 

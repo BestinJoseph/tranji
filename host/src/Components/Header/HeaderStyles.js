@@ -3,26 +3,29 @@ import { makeStyles } from '@mui/styles'
 export default makeStyles(() => ({
     header: {
         // height: '5rem',
-        position: 'relative',
+        position: 'absolute',
+        color: 'white',
 
         '& .headerTop': {
+            position: 'absolute',
+            zIndex: '10',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             height: '5rem',
             maxWidth: '80vw',
-            margin: '0 auto',
-            // border: '1px solid green',
+            width: '100vw',
+            border: '1px solid green',
 
             '@media screen and (max-width: 430px)': {
                 height: '4rem',
                 padding: '2rem 1rem',
                 position: 'fixed',
                 // background: 'white',
-                width: '100vw',
+                maxWidth: '100vw',
                 borderBottom: '1px solid blue',
                 zIndex: 2,
-                background: 'blue',
+                background: 'white',
             },
 
             '& .headerLogo': {
@@ -32,7 +35,7 @@ export default makeStyles(() => ({
 
                 '@media screen and (max-width: 430px)': {
                     height: '3rem',
-                    width: '3rem',
+                    width: '6rem',
                 },
             },
 
@@ -91,7 +94,7 @@ export default makeStyles(() => ({
 
                 '@media screen and (max-width: 430px)': {
                     display: 'inline-block',
-                    background: 'white',
+                    background: '#0F3271',
                     width: '2rem',
                     height: '2px',
                 },
@@ -103,7 +106,7 @@ export default makeStyles(() => ({
                     position: 'absolute',
                     bottom: 10,
                     left: 0,
-                    background: 'white',
+                    background: '#0F3271',
                 },
 
                 '&::before': {
@@ -113,7 +116,7 @@ export default makeStyles(() => ({
                     position: 'absolute',
                     top: 10,
                     left: 0,
-                    background: 'white',
+                    background: '#0F3271',
                 }
             }
         },
@@ -123,8 +126,9 @@ export default makeStyles(() => ({
             width: '100%',
 
             '@media screen and (max-width: 430px)': {
-                background: 'white',
-                // display: 'none',
+                // background: 'white',
+                backgroundColor: 'rgba(255, 255, 255, 0.4)',
+                display: 'none',
                 position: 'fixed',
                 top: 0,
                 left: 0,

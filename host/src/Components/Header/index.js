@@ -25,8 +25,9 @@ const Header = () => {
     useEffect(()=>{
         setActive(pathname.split('/')[1])
         if(window.innerWidth >= sizeScreen) {
+            console.log(window.innerWidth)
             setSizeScreen(window.innerWidth)
-            setMenuModal(true)
+            setMenuModal(false)
         } else {
             setSizeScreen(500)
             setMenuModal(false)
@@ -46,36 +47,38 @@ const Header = () => {
         sizeScreen <= 500 ? setMenuModal(false) : null
     }
 
-    // console.log(active)
+    console.log(sizeScreen)
     // console.log(window.innerWidth)
 
     return (
         <div className={classes.header}>
-            <div className={classnames('headerTop')}>
-                <div className={ classnames('headerLogo') }>
-                    <img src="/logo.svg" width="100%" height="100%" onClick={handleNavigate} />
+            <div style={{ width: '85rem', margin: '0 auto', borderBottom: '1px solid white', }}>
+                <div className={classnames('headerTop')}>
+                    <div className={ classnames('headerLogo') }>
+                        <img src="/logo.svg" width="100%" height="100%" onClick={handleNavigate} />
+                    </div>
+                    <div className={classnames('headerCommunicate')}>
+                        <div>
+                            <div>
+                                <p>Call Us</p>
+                                <h6>+966 (50) 636 5392</h6>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Email Us</p>
+                                <h6>info@trange.sa</h6>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Careers</p>
+                                <h6>careers@trange.sa</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={classnames('humbergerIcon')} onClick={() => handleHumberger()} ></div>
                 </div>
-                <div className={classnames('headerCommunicate')}>
-                    <div>
-                        <div>
-                            <p>Call Us</p>
-                            <h6>+966 (50) 636 5392</h6>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <p>Email Us</p>
-                            <h6>info@trange.sa</h6>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <p>Careers</p>
-                            <h6>careers@trange.sa</h6>
-                        </div>
-                    </div>
-                </div>
-                <div className={classnames('humbergerIcon')} onClick={() => handleHumberger()} ></div>
             </div>
             <div className={classnames('headerMenuContainer')} style={{ display: menuModal ? 'inline-block' : 'none' }} >
                 <div className={classnames('headerMenu')}>

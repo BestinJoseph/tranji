@@ -14,9 +14,13 @@ export default makeStyles(()=>({
             maxWidth: '1080px',
             textAlign: 'center',
 
+            '@media screen and (max-width: 430px)': {
+                textAlign: 'left',
+            },
+
             '& .historyHeader': {
                 marginBottom: '1.5rem', 
-                fontSize: '1.75rem', 
+                fontSize: '1.75rem',
                 textTransform: 'uppercase',
                 fontWeight: '600'
             },
@@ -27,15 +31,21 @@ export default makeStyles(()=>({
 
                 '@media screen and (max-width: 430px)': {
                     display: 'inline-block',
-                    margin: '2rem 0 2rem',
+                    marginBottom: '2rem',
                 },
 
                 '& .historyContentInner' : {
                     width: '65%',
                     margin: '0 auto',
 
+                    '@media screen and (max-width: 430px)': {
+                        margin: '0',
+                        width: '100%',
+                    },
+
                     '& .contentText' : {
                         lineHeight: '1.35rem',
+                        margin: '0 auto',
                     }
                 }
             },
@@ -48,6 +58,8 @@ export default makeStyles(()=>({
 
                 '@media screen and (max-width: 430px)': {
                     display: 'inline-block',
+                    gridTemplateColumns: "repeat(1, 1fr)",
+                    width: '100%',
                 },
 
                 '& .historyStatsItem': {
@@ -60,10 +72,8 @@ export default makeStyles(()=>({
 
                     '@media screen and (max-width: 430px)': {
                         marginBottom: '2rem',
-                    },
-
-                    '@media screen and (max-width: 1120px)': {
-                        height: '10rem',
+                        width: '100%',
+                        height: '20rem',
                     },
 
                     '& .historyImage': {
@@ -85,6 +95,12 @@ export default makeStyles(()=>({
                         padding: '1rem',
                         position: 'relative',
                         zIndex: 1,
+
+                        '@media screen and (max-width: 1120px)': {
+                            display: 'inline',
+                            alignItems: 'none',
+                            justifyContent: 'none',
+                        },
                         
                         '&::before': {
                             content: "' '",
@@ -97,6 +113,14 @@ export default makeStyles(()=>({
                             background: 'black',
                             opacity: .75,
                             borderRadius: '10px',
+
+                            '@media screen and (max-width: 1120px)': {
+                                width: '100%',
+                                height: '10rem',
+                                background: 'red',
+                                bottom: '0',
+                                top: 'initial',
+                            },
                         }
                     },
 
