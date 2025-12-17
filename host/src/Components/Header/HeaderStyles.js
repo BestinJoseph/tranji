@@ -2,20 +2,19 @@ import { makeStyles } from '@mui/styles'
 
 export default makeStyles(() => ({
     header: {
-        // height: '5rem',
-        position: 'absolute',
-        color: 'white',
+        // paddingBottom: '5rem',
+        position: 'relative',
+        borderTop: '3px solid green',
 
         '& .headerTop': {
-            position: 'absolute',
-            zIndex: '10',
+            width: '60vw', 
+            margin: '0 auto', 
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            height: '5rem',
-            maxWidth: '80vw',
+            height: '7rem',
+            maxWidth: '60vw',
             width: '100vw',
-            border: '1px solid green',
 
             '@media screen and (max-width: 430px)': {
                 height: '4rem',
@@ -123,7 +122,7 @@ export default makeStyles(() => ({
 
         '& .headerMenuContainer': {
             background: '#0e1f4d',  //3C54A4 //6CBE46 //#0e1f4d
-            width: '100%',
+            // width: '100%',
 
             '@media screen and (max-width: 430px)': {
                 // background: 'white',

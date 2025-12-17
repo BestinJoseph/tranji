@@ -27,7 +27,7 @@ const Header = () => {
         if(window.innerWidth >= sizeScreen) {
             console.log(window.innerWidth)
             setSizeScreen(window.innerWidth)
-            setMenuModal(false)
+            setMenuModal(true)
         } else {
             setSizeScreen(500)
             setMenuModal(false)
@@ -52,12 +52,12 @@ const Header = () => {
 
     return (
         <div className={classes.header}>
-            <div style={{ width: '85rem', margin: '0 auto', borderBottom: '1px solid white', }}>
+            <div style={{ position: 'absolute', width: '100%', zIndex: '10', borderBottom: '.1px solid rgba(255, 255, 255, 0.5)',}}>
                 <div className={classnames('headerTop')}>
                     <div className={ classnames('headerLogo') }>
                         <img src="/logo.svg" width="100%" height="100%" onClick={handleNavigate} />
                     </div>
-                    <div className={classnames('headerCommunicate')}>
+                    {/* <div className={classnames('headerCommunicate')}>
                         <div>
                             <div>
                                 <p>Call Us</p>
@@ -76,15 +76,19 @@ const Header = () => {
                                 <h6>careers@trange.sa</h6>
                             </div>
                         </div>
+                    </div> */}
+                    
+                    <div className={classnames('headerMenuContainer')} style={{ display: menuModal ? 'inline-block' : 'none' }} >
+                        <div className={classnames('headerMenu')}>
+                            { menu && menu.map((mee, i) => (
+                                <Link style={{ background: active === mee.link ? '#3c54a4' : 'none' }} to={`/${mee.link}`} className={classnames('headerMenuLink')} key={i} onClick={() => menuLinkHandle()}>{mee.name}</Link>
+                            ))}
+                        </div>
+                    </div>
+                    <div style={{ color: 'white', }}>
+                        <h3>Arabic | vision 2030</h3>
                     </div>
                     <div className={classnames('humbergerIcon')} onClick={() => handleHumberger()} ></div>
-                </div>
-            </div>
-            <div className={classnames('headerMenuContainer')} style={{ display: menuModal ? 'inline-block' : 'none' }} >
-                <div className={classnames('headerMenu')}>
-                    { menu && menu.map((mee, i) => (
-                        <Link style={{ background: active === mee.link ? '#3c54a4' : 'none' }} to={`/${mee.link}`} className={classnames('headerMenuLink')} key={i} onClick={() => menuLinkHandle()}>{mee.name}</Link>
-                    ))}
                 </div>
             </div>
         </div>
