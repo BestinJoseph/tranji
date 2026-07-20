@@ -11,8 +11,8 @@ export default makeStyles(()=>({
         '& .historySubContainer': {
             // border: '1px solid red',
             margin: '0 auto',
-            maxWidth: '1080px',
-            textAlign: 'center',
+            maxWidth: '1172px',
+            textAlign: 'left',
 
             '@media screen and (max-width: 430px)': {
                 textAlign: 'left',
@@ -35,8 +35,9 @@ export default makeStyles(()=>({
                 },
 
                 '& .historyContentInner' : {
-                    width: '65%',
-                    margin: '0 auto',
+                    // width: '65%',
+                    // margin: '0 auto',
+                    fontSize: '2.5rem',
 
                     '@media screen and (max-width: 430px)': {
                         margin: '0',
@@ -44,8 +45,9 @@ export default makeStyles(()=>({
                     },
 
                     '& .contentText' : {
-                        lineHeight: '1.35rem',
+                        lineHeight: '3.25rem',
                         margin: '0 auto',
+                        fontWeight: '600',
                     }
                 }
             },
@@ -53,7 +55,7 @@ export default makeStyles(()=>({
             '& .historyStats': {
                 display: 'grid',
                 justifyContent: 'space-between',
-                gridTemplateColumns: 'repeat(4, 1fr)',
+                gridTemplateColumns: 'repeat(3, 1fr)',
                 columnGap: '2.5rem',
 
                 '@media screen and (max-width: 430px)': {
@@ -66,9 +68,11 @@ export default makeStyles(()=>({
                     height: '15rem',
                     cursor: 'pointer',
                     width: '100%',
-                    borderRadius: '10px',
+                    // borderRadius: '25px',
                     position: 'relative',
                     overflow: 'hidden',
+                    boxShadow: '0px 4px 15px lightgrey',
+                    fontSize: '1.1rem',
 
                     '@media screen and (max-width: 430px)': {
                         marginBottom: '2rem',
@@ -124,8 +128,11 @@ export default makeStyles(()=>({
                         }
                     },
 
-                    '&:hover .historyStatText': {
-                        display: 'flex',
+                    '&:hover': {
+
+                        '& .historyStatText': {
+                            display: 'flex',
+                        }
                     }
                 }
             }

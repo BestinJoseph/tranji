@@ -3,14 +3,46 @@ import { makeStyles } from "@mui/styles"
 export default makeStyles(()=>({
     reachOutContainer: {
         padding: '4rem 0',
+        background: '',
+        backgroundImage: 'url(/images/discussion.jpg)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100%',
+        backgroundPosition: 'center',
+        height: '35rem',
 
         '@media screen and (max-width: 430px)': {
             padding: '3rem 2rem',
         },
 
         '& .reachOutSubContainer': {
-            maxWidth: '1080px',
+            maxWidth: '1172px',
             margin: '0 auto',
+
+            '& .reachoutText': {
+                width: '50%',
+                background: '#6cbe46',
+                padding: '2rem',
+
+                '& h1': {
+                    fontWeight: '700',
+                    color: 'white',
+                },
+
+                '& h5': {
+                    cursor: 'pointer',
+                    marginTop: '1rem',
+                    fontSize: '1.2rem',
+                    border: '.5px solid white',
+                    display: 'inline-block',
+                    padding: '.5rem',
+                    color: 'white',
+
+                    '&:hover': {
+                        color: '#6cbe46',
+                        background: 'white',
+                    }
+                }
+            },
 
             '& .reachOutContext': {
                 display: 'grid',

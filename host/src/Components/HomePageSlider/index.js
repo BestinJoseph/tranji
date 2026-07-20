@@ -17,8 +17,9 @@ const HomePageSlider = () => {
                         <h5>Proud to build tomorrow’s world</h5>
                         <h1>To guarantee efficient and prosperous projects</h1>
                         <h2>We collaborate closely with our clients to precisely decipher their dreams and visions, and then transform them into tangible reality through construction solutions</h2>
+
                     </div>
-                    <button className={classNames('slideBtn')}>Demo Product</button>
+                    <button className={classNames('slideBtn')}>Get in touch with us</button>
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ export default {
             name: 'Al Khafa 380KV OHTL project',
             client: 'Al Babtain Contracting Company',
             description: '380KV Overhead Transmission Line',
+            location: '',
             startDate: 'Jul, 2024',
             endDate: '',
             images: [
@@ -21,6 +22,7 @@ export default {
             name: 'Al Shoaiba Solar Pv project',
             client: 'China Energy International Group Company Limited',
             description: '110Kv Overhead Transmission Line',
+            location: '',
             startDate: 'Sep, 2023',
             endDate: '',
             images: [
@@ -40,6 +42,7 @@ export default {
             name: 'Al Shoaiba Solar Pv project',
             client: 'China Energy International Group Company Limited',
             description: '2.6 GW PV Plant Testing and Commissioning',
+            location: '',
             startDate: 'Dec, 2023',
             endDate: '',
             images: [

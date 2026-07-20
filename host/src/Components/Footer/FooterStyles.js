@@ -15,9 +15,9 @@ export default makeStyles(()=>({
 
             '& .footerTopSection': {
                 display: 'grid',
-                gridTemplateColumns: '1fr .65fr .65fr 1fr',
-                borderBottom: '1px solid white',
+                gridTemplateColumns: '1fr 1fr .65fr 1fr',
                 padding: '3rem 0 1rem',
+                fontSize: '1.1rem',
 
                 '@media screen and (max-width: 430px)': {
                     display: 'inline-block',
@@ -37,7 +37,7 @@ export default makeStyles(()=>({
                     },
 
                     '& p': {
-                        fontSize: '.80rem',
+                        fontSize: '1.1rem',
                         lineHeight: '1.25rem',
                         fontWeight: '200',
                     }
@@ -96,6 +96,7 @@ export default makeStyles(()=>({
                         listStyle: 'none',
                         paddingLeft: '0rem',
                         width: '85%',
+                        fontSize: '1.5rem',
 
                         '& li': {
                             marginBottom: '1rem',
@@ -110,7 +111,8 @@ export default makeStyles(()=>({
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                height: '5rem',
+                height: '15rem',
+                fontSize: '1.2rem',
             }
         },
         

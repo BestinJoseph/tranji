@@ -3,6 +3,7 @@ import React from 'react'
 import useStyles from './HomePageStyles'
 import { HomePageSlider, HomePageHistory, HomePageExpertise, HomePageProjects, HomePageReachOut, HomePageClients } from '../../Components/'
 import data from '../../database'
+import HomeWhyUs from '../../Components/HomeWhyUs'
 
 const HomePage = () => {
     const classes = useStyles()
@@ -12,9 +13,10 @@ const HomePage = () => {
         <div className={classes.homePageContainer}>
             <HomePageSlider />
             <HomePageHistory />
-            <HomePageExpertise services={services} vendors={vendors} />
+            {/* <HomePageExpertise services={services} vendors={vendors} /> */}
             <HomePageProjects />
-            <HomePageClients clients={clients} />
+            <HomeWhyUs />
+            {/* <HomePageClients clients={clients} /> */}
             <HomePageReachOut />
         </div>
     )

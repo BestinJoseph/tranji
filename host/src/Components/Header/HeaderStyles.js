@@ -2,9 +2,9 @@ import { makeStyles } from '@mui/styles'
 
 export default makeStyles(() => ({
     header: {
-        // paddingBottom: '5rem',
-        position: 'relative',
-        borderTop: '3px solid green',
+        position: 'fixed',
+        zIndex: '1',
+        width: '100vw', 
 
         '& .headerTop': {
             width: '60vw', 
@@ -12,9 +12,13 @@ export default makeStyles(() => ({
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            height: '7rem',
-            maxWidth: '60vw',
+            // height: '7rem',
             width: '100vw',
+            background: 'white',
+            transition: "0.3s ease-out",
+            padding: '0 1rem',
+            boxShadow: '0px .25px 3px lightgrey',
+            
 
             '@media screen and (max-width: 430px)': {
                 height: '4rem',
@@ -121,7 +125,7 @@ export default makeStyles(() => ({
         },
 
         '& .headerMenuContainer': {
-            background: '#0e1f4d',  //3C54A4 //6CBE46 //#0e1f4d
+            // background: '#0e1f4d',  //3C54A4 //6CBE46 //#0e1f4d
             // width: '100%',
 
             '@media screen and (max-width: 430px)': {
@@ -141,7 +145,7 @@ export default makeStyles(() => ({
                 display: 'flex',
                 justifyContent: 'flex-end',
                 // background: '#092759',
-                color: 'white',
+                // color: 'white',
                 maxWidth: '80vw',
                 margin: '0 auto',
 
@@ -153,7 +157,7 @@ export default makeStyles(() => ({
                 },
 
                 '& .headerMenuLink': {
-                    color: 'white',
+                    color: '#0F3271',
                     textAlign: 'center',
                     textDecoration: 'none',
                     fontWeight: '600',

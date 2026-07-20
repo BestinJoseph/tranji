@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles"
 export default makeStyles((theme)=>({
     projectsContainer: {
         background: '#e2e8f0',
-        padding: '6rem',
+        padding: '5rem 0',
         position: 'relative',
         height: '100%',
 
@@ -13,7 +13,7 @@ export default makeStyles((theme)=>({
 
         '& .projectsSubContainer': {
             // maxWidth: '1080px',
-            width: '80vw',
+            maxWidth: '1172px',
             height: '100%',
             margin: '0 auto',
 
@@ -35,13 +35,17 @@ export default makeStyles((theme)=>({
             '& .projectHeaderSection': {
                 textAlign: 'center',
                 textTransform: 'capitalize',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                // border: '1px solid blue',
 
                 '@media screen and (max-width: 430px)': {
                     display: 'inline-block',
                 },
 
                 '& .projectMoreLink': {
-                    margin: '1rem 0',
+                    margin: '.1rem 0',
                     display: 'inline-block',
                     textDecoration: 'none',
                     fontWeight: 600,
@@ -62,9 +66,9 @@ export default makeStyles((theme)=>({
 
             '& .projectLists': {
                 display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                gridColumnGap: '4rem',
-                marginTop: '2rem',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gridColumnGap: '1rem',
+                marginTop: '1rem',
 
                 '@media screen and (max-width: 430px)': {
                     display: 'block',
@@ -88,7 +92,7 @@ export default makeStyles((theme)=>({
                         "&::before": {
                             content: "' '",
                             width: '100%',
-                            border: '1px solid white',
+                            // border: '1px solid white',
                             borderRadius: '10px',
                             height: '100%',
                             position: 'absolute',
@@ -97,6 +101,35 @@ export default makeStyles((theme)=>({
                     },
 
                     '& .projectItemContent': {
+                        background: 'white',
+                        padding: '2rem',
+                        height: '15rem',
+
+                        '& .projectItemName': {
+                            // position: 'absolute',
+                            // bottom: '2rem',
+                            // textAlign: 'center',
+                            // background: 'rgba(51, 1, 253, 1)',
+                            width: '100%',
+                            fontSize: '1.25rem',
+                            fontWeight: 700,
+                            textTransform: 'uppercase',
+                            color: 'black',
+                            // padding: '2rem 0',
+                        },
+
+                        '& .projectItemClientName': {
+                            // position: 'absolute',
+                            // bottom: '2rem',
+                            // textAlign: 'center',
+                            // background: 'rgba(51, 1, 253, 1)',
+                            width: '100%',
+                            fontSize: '1rem',
+                            fontWeight: 400,
+                            color: 'gray',
+                            paddingTop: '.5rem',
+                            // padding: '2rem 0',
+                        },
 
                         '&:hover': {
                             transition: 'all .7s',
@@ -105,11 +138,11 @@ export default makeStyles((theme)=>({
                     },
 
                     '& .projectItemImageContainer': {
-                        // height: "14rem",
-                        width: "100%",
-                        marginBottom: '1.75rem',
-                        transition: 'ease-in-out .7s',
-                        borderRadius: '10px',
+                        height: "15rem",
+                        width: "auto",
+                        // marginBottom: '1.75rem',
+                        transition: 'ease-in-out 2s',
+                        // borderRadius: '10px',
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: '100%',
                         backgroundPosition: 'center center',
@@ -122,33 +155,15 @@ export default makeStyles((theme)=>({
 
                         '& .projectItemImage': {
                             cursor: 'pointer',
+                            transition: 'ease-in-out .5s',
                         },
-                    },
+                        
+                        '&:hover': {
 
-                    '& .projectItemName': {
-                        // position: 'absolute',
-                        // bottom: '2rem',
-                        // textAlign: 'center',
-                        // background: 'rgba(51, 1, 253, 1)',
-                        width: '100%',
-                        fontSize: '1.25rem',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        color: 'black',
-                        // padding: '2rem 0',
-                    },
-
-                    '& .projectItemClientName': {
-                        // position: 'absolute',
-                        // bottom: '2rem',
-                        // textAlign: 'center',
-                        // background: 'rgba(51, 1, 253, 1)',
-                        width: '100%',
-                        fontSize: '1rem',
-                        fontWeight: 400,
-                        color: 'gray',
-                        paddingTop: '.5rem',
-                        // padding: '2rem 0',
+                            '& .projectItemImage': {
+                                transform: 'scale(1.25)',
+                            },
+                        }
                     },
 
                     '&:last-child': {

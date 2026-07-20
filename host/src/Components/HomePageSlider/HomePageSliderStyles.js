@@ -14,6 +14,7 @@ export default makeStyles(()=>({
         // height: '100vh',
         position: 'relative',
         overflow: 'hidden',
+        // paddingTop: '9.5rem',
 
         '@media screen and (max-width: 430px)': {
             overflow: 'hidden',
@@ -39,6 +40,7 @@ export default makeStyles(()=>({
         '& .sliderImage': {
             height: 'auto',
             width: '100%',
+            filter: "brightness(30%)",
 
             '@media screen and (max-width: 430px)': {
                 height: '100vh',
@@ -51,13 +53,15 @@ export default makeStyles(()=>({
             position: 'absolute',
             bottom: '0',
             left: '0',
-            background: 'linear-gradient(to right, rgba(6, 56, 129, 1), rgba(255,0,0,0))',
+            background: 'linear-gradient(to bottom, rgba(6, 56, 129, .53), rgba(108,190,70,.53))',
+            // background: 'rgba(6, 56, 129, .5)',
             height: '100%',
             width: '100%',
             color: 'white',
             // backdropFilter: 'blur(2px)',
             display: 'flex',
             alignItems: 'center',
+            paddingTop: '7.5rem',
 
             '@media screen and (max-width: 430px)': {
                 background: 'linear-gradient(to right, rgba(6, 55, 129, 0.53), rgba(6, 55, 129, 0.53))',
@@ -93,11 +97,11 @@ export default makeStyles(()=>({
                 },
 
                 '& h1': {
-                    fontSize: '3.25rem',
-                    fontWeight: '600',
+                    fontSize: '4.25rem',
+                    fontWeight: '500',
                     margin: '0 0 1.25rem 0',
-                    lineHeight: '3.25rem',
-                    width: '35vw',
+                    lineHeight: '4.75rem',
+                    width: '45vw',
     
                     '@media screen and (max-width: 430px)': {
                         marginBottom: '.25rem',
@@ -108,11 +112,12 @@ export default makeStyles(()=>({
                 },
     
                 '& h2': {
-                    fontSize: '1.25rem',
+                    fontSize: '1.75rem',
                     fontWeight: '400',
-                    marginBottom: '1.5rem',
-                    lineHeight: '1.5rem',
-                    width: '32vw',
+                    marginBottom: '3.5rem',
+                    lineHeight: '2rem',
+                    width: '50vw',
+                    letterSpacing: '1.5px',
     
                     '@media screen and (max-width: 430px)': {
                         // marginBottom: '.25rem',
@@ -129,6 +134,9 @@ export default makeStyles(()=>({
                     border: 'none',
                     background: '#6cbe46',
                     color: 'white',
+                    textTransform: 'uppercase',
+                    letterSpacing: '2px',
+                    // fontWeight: '500',
 
                     '&:hover': {
                         background: '#3c54a4',

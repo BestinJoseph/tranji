@@ -29,7 +29,7 @@ const HomePageProjects = () => {
         <div className={classes.projectsContainer}>
             <div className={classNames('projectsSubContainer')}>
                 <div className={classNames('projectHeaderSection')}>
-                    <h1>Some of our ongoing Projects</h1>
+                    <h3>Some of our ongoing Projects</h3>
                     <Link to="/project" className={classNames('projectMoreLink')}>browse all project</Link>
                 </div>
                 <div className={classNames('projectLists')}>
@@ -39,9 +39,10 @@ const HomePageProjects = () => {
                                 return (
                                     <div  className={classNames('projectItem')} key={i}>
                                         <div className={classNames('projectItemImageContainer')}>
-                                            <img src={`/images/${project.images[0].url}`} width={`100%`} alt="nice" />
+                                            <img src={`/images/${project.images[0].url}`} width={`100%`} height={`100%`} alt="nice" className={classNames('projectItemImage')} />
                                         </div>
                                         <div className={classNames('projectItemContent')} >
+                                            <p>12-01-2025</p>
                                             <div className={classNames('projectItemName')}>{ project.name}</div>
                                             <div className={classNames('projectItemClientName')}>{ project.client }</div>
                                         </div>

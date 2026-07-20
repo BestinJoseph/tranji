@@ -56,7 +56,12 @@ const ProjectsList = () => {
                                     <img src={`./images/${proj.images[0].url}`} alt={proj.name} className={classNames('projectItemImage')} />
                                 </div>
                                 <div className={classNames('projectItemText')}>
+                                    <div>Substation Electrical</div>
                                     <h5>{ proj.name }</h5>
+                                    <h5>{ proj.client }</h5>
+                                    <h3>{ proj.location }</h3>
+                                    <h4>{proj.startDate}</h4>
+                                    <a href=''>read more</a>
                                 </div>
                             </div>
                         ))

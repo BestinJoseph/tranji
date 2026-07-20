@@ -16,29 +16,12 @@ const HomePageReachOut = () => {
     return (
         <div className={classes.reachOutContainer}>
             <div className={classNames('reachOutSubContainer')}>
-                <h5>Contact Us</h5>
-                <h1>Reach out to excellence</h1>
+                <div className={classNames('reachoutText')}>
+                    <h1>Traji Sa is ready to quote your tomorrow vision</h1>
+                    <h5>Contact Us</h5>
+                </div>
                 <div className={classNames('reachOutContext')}>
-                    <div className={classNames('reachOutForm')}>
-                        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-                            {({ values }) => (
-                                <Form>
-                                    <div className={classNames('reachOutSubForm')}>
-                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridColumnGap: '1rem', }}>
-                                            <div><Field name="fullName" type="text" className={classNames('reachOutFormField')} /></div>
-                                            <div><Field name="phone" type="text" className={classNames('reachOutFormField')} placeholder="Phone Number" /></div>
-                                        </div>
-                                        <div>
-                                            <Field name="email" type="text" className={classNames('reachOutFormField')} />
-                                        </div>
-                                        <div><Field name="message" as="textarea" rows="10" cols="90" className={classNames('reachOutFormField')} /></div>
-                                        <button type="submit" className={classNames('reachOutFormBtn')} >Submit</button>
-                                    </div>
-                                </Form>
-                            )}
-                        </Formik>
-                    </div>
-                    <div className={classNames('brochureList')}>
+                    {/* <div className={classNames('brochureList')}>
                         <div className={classNames('corporate')}>
                             <div style={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', }}>
                                 <h3 style={{ padding: '1rem 0 0 1rem', }}>Corporate <br /> Brochure</h3>
@@ -49,7 +32,7 @@ const HomePageReachOut = () => {
                                 <img src="/images/brochure.jpg" alt="" />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

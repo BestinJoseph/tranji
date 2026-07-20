@@ -20,6 +20,16 @@ const Header = () => {
     const [sizeScreen, setSizeScreen] = useState(500)
     const [active, setActive] = useState('')
 
+    const [headScroll, setHeadScroll] = useState(false)
+    const changeHeaderSize = () => {
+        if(window.scrollY >= 112) {
+            setHeadScroll(true)
+        } else {
+            setHeadScroll(false)
+        }
+    }
+    window.addEventListener('scroll', changeHeaderSize)
+
     // console.log(pathname)
 
     useEffect(()=>{
@@ -51,9 +61,9 @@ const Header = () => {
     // console.log(window.innerWidth)
 
     return (
-        <div className={classes.header}>
-            <div style={{ position: 'absolute', width: '100%', zIndex: '10', borderBottom: '.1px solid rgba(255, 255, 255, 0.5)',}}>
-                <div className={classnames('headerTop')}>
+        <div className={classes.header} >
+            <div style={{ }}>
+                <div className={classnames('headerTop')} style={{ height: headScroll ? "5rem" : "7rem"}}>
                     <div className={ classnames('headerLogo') }>
                         <img src="/logo.svg" width="100%" height="100%" onClick={handleNavigate} />
                     </div>
@@ -81,7 +91,7 @@ const Header = () => {
                     <div className={classnames('headerMenuContainer')} style={{ display: menuModal ? 'inline-block' : 'none' }} >
                         <div className={classnames('headerMenu')}>
                             { menu && menu.map((mee, i) => (
-                                <Link style={{ background: active === mee.link ? '#3c54a4' : 'none' }} to={`/${mee.link}`} className={classnames('headerMenuLink')} key={i} onClick={() => menuLinkHandle()}>{mee.name}</Link>
+                                <Link style={{ background: active === mee.link ? '#6cbe46' : 'none' }} to={`/${mee.link}`} className={classnames('headerMenuLink')} key={i} onClick={() => menuLinkHandle()}>{mee.name}</Link>
                             ))}
                         </div>
                     </div>

@@ -16,7 +16,8 @@ const Footer = () => {
                         <h4>Tran Ji LLC</h4>
                         <p></p>
                     </div>
-                    <div className={classnames('footerLinksContainer')}>
+                    <div/>
+                    {/* <div className={classnames('footerLinksContainer')}>
                         <h3>Quick Links</h3>
                         <ul className={classnames('footerLinks')}>
                             <li><Link to="/about">Home</Link></li>
@@ -25,7 +26,7 @@ const Footer = () => {
                             <li><Link to="/">Projects</Link></li>
                             <li><Link to="/">Contact Us</Link></li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className={classnames('footerContactsContainer')}>
                         <h4>Contacts</h4>
                         <ul className={classnames('footerContacts')}>
@@ -36,8 +37,8 @@ const Footer = () => {
                             }
                         </ul>
                     </div>
-                    <div>
-                        <h4>Social Links</h4>
+                    <div style={{ textAlign: 'right' }}>
+                        <h4>Linkden, Facebook, Instagram</h4>
                     </div>
                 </div>
                 <div className={classnames('footerCopyrightSection')}>
